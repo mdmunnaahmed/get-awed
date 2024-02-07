@@ -1,0 +1,34 @@
+.form-group {
+    margin-bottom: 16px;
+}
+.form--control {
+    width: 100%;
+    height: 56px;
+    border: 1px solid var(--secondary-four);
+    padding: 17px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    // transition: all ease 0.3s;
+    outline: 0;
+    &::placeholder {
+        font-weight: 500;
+        color: var(--secondary-two);
+    }
+    &::-webkit-input-placeholder {
+        font-weight: 500;
+        color: var(--secondary-two);
+    }
+    &:focus {
+        border-color: var(--base);
+    }
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: var(--white);
+    border-color: var(--secondary-four);
+}

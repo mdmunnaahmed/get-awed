@@ -1,0 +1,102 @@
+// register form start
+.register-area {
+    padding-bottom: 155px;
+}
+.register-wrapper {
+    background: var(--white);
+    border-radius: 18px;
+    max-width: 626px;
+    margin-inline: auto;
+    padding: 32px 48px 30px;
+    margin-top: 27px;
+    .register-top-content {
+        margin-bottom: 28px;
+        &__title {
+            margin-bottom: 8px;
+        }
+        a {
+            color: var(--body);
+            text-decoration: underline;
+            font-size: 14px;
+        }
+    }
+    .text {
+        color: var(--secondary-two);
+        text-align: center;
+        max-width: 310px;
+        margin-inline: auto;
+        margin-bottom: 32px;
+    }
+    .or-text {
+        color: var(--secondary-three);
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .term-agree {
+        color: var(--secondary-two);
+        font-weight: 500;
+        line-height: 1.4;
+        a {
+            text-decoration: underline;
+            display: inline;
+        }
+    }
+    .checkbox-gap {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .checkbox-wrapper {
+        display: flex;
+        gap: 12px;
+    }
+    .error-text,
+    .error-head {
+        display: none;
+    }
+    .error {
+        position: relative;
+
+        input {
+            position: relative;
+            border-color: var(--error);
+        }
+        .error-text {
+            color: var(--error);
+            font-size: 14px;
+            font-weight: 500;
+            max-width: 350px;
+            display: block;
+            line-height: 1.35;
+            margin-top: 8px;
+        }
+        .error-text {
+            display: block;
+        }
+        .error-head {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-30px);
+            display: block;
+        }
+    }
+}
+.github-google-wrapper {
+    border-bottom: 1px solid var(--secondary-five);
+    padding-bottom: 40px;
+    margin-bottom: 32px;
+    a {
+        background-color: var(--third-two);
+        border-radius: 80px;
+        padding: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 11px;
+        &:not(:last-child) {
+            margin-bottom: 13px;
+        }
+    }
+}
+// register form end

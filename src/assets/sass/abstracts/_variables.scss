@@ -1,37 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 :root {
-  --heading-font: "Inter", sans-serif;
-  --body-font: "Inter", sans-serif;
+    --heading-font: "Inter", sans-serif;
+    --body-font: "Inter", sans-serif;
 
-  --heading: rgb(0, 0, 0);
-  --body: rgb(46, 47, 44);
-  --base: rgb(18, 65, 35);
+    --heading: #1c1b1f;
+    --body: #7b7882;
+    --base: #1ea363;
+    --border: #f6f6f6;
 
-  --primary: #3737db;
-  --primary-two: #616dd4;
-  --primary-three: #979ee3;
-  --primary-four: #e0e0f8;
-  --primary-five: #f2f2fb;
-  --primary-six: #f4f4f8;
-  --primary-seven: #fcfcff;
+    --primary: #3737db;
+    --primary-two: #616dd4;
+    --primary-three: #979ee3;
+    --primary-four: #e0e0f8;
+    --primary-five: #f2f2fb;
+    --primary-six: #f4f4f8;
+    --primary-seven: #fcfcff;
 
-  --secondary: #1c1b1f;
-  --secondary-two: #424049;
-  --secondary-three: #7b7882;
-  --secondary-four: #bebcc3;
-  --secondary-five: #e6e6eb;
-  --secondary-six: #f5f5f6;
-  --secondary-seven: #faf9fb;
+    --secondary: #1c1b1f;
+    --secondary-two: #424049;
+    --secondary-three: #7b7882;
+    --secondary-four: #bebcc3;
+    --secondary-five: #e6e6eb;
+    --secondary-six: #f5f5f6;
+    --secondary-seven: #faf9fb;
 
-  --third: #e6e6eb;
-  --third-two: #e3e9ef;
+    --third: #e6e6eb;
+    --third-two: #e3e9ef;
 
-  --error: #ea6767;
-  --error-two: #f5dfdf;
+    --error: #ea6767;
+    --error-two: #f5dfdf;
 
-  --validation: #1ea363;
-  --validation-two: #e8f3ee;
+    --validation: #1ea363;
+    --validation-two: #e8f3ee;
 
-  --white: #ffffff;
+    --white: #ffffff;
 }

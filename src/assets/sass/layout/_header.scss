@@ -1,0 +1,52 @@
+// header part start
+header {
+    padding-block: 24px;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu,
+.nav-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    li {
+        a {
+            color: var(--heading);
+        }
+    }
+}
+.menu {
+    gap: 10px 48px;
+    h6 {
+        font-size: 20px;
+    }
+    li {
+        a {
+            color: var(--heading);
+        }
+    }
+}
+.nav-right {
+    gap: 10px 32px;
+}
+.register-btn {
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 8px 15px;
+}
+.badge {
+    background-color: #e0e0f8;
+    border-radius: 16px;
+    color: var(--heading);
+    font-size: 11px;
+    line-height: 15.4px;
+    padding: 2px 9px;
+    font-weight: 500;
+    margin-left: 2px;
+}
+// header part end
