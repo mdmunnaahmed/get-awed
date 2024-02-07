@@ -8,6 +8,7 @@ body {
 	font-size: 1rem;
 	color: hsl(var(--body));
 	font-family: var(--body-font);
+	line-height: 1.5;
 }
 a {
 	text-decoration: none;
@@ -37,7 +38,7 @@ h5,
 h6 {
 	margin: 0;
 	font-weight: 700;
-	line-height: 1.3;
+	line-height: 1.375;
 	color: hsl(var(--heading));
 	font-family: var(--heading-font);
 }
@@ -47,7 +48,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-	color: hsl(var(--heading));
+	color: inherit;
 }
 
 .fs--12px {

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 :root {
-  --heading-font: "Mulish", sans-serif;
-  --body-font: "Mulish", sans-serif;
+  --heading-font: "Inter", sans-serif;
+  --body-font: "Inter", sans-serif;
   --heading: rgb(0, 0, 0);
   --body: rgb(46, 47, 44);
   --base: rgb(18, 65, 35);
@@ -38,6 +38,7 @@ body {
   font-size: 1rem;
   color: hsl(var(--body));
   font-family: var(--body-font);
+  line-height: 1.5;
 }
 
 a {
@@ -69,7 +70,7 @@ h5,
 h6 {
   margin: 0;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.375;
   color: hsl(var(--heading));
   font-family: var(--heading-font);
 }
@@ -80,7 +81,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  color: hsl(var(--heading));
+  color: inherit;
 }
 
 .fs--12px {
