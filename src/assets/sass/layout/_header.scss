@@ -1,12 +1,116 @@
 // header part start
 header {
     padding-block: 24px;
+    @include breakpoint(max-lg) {
+        padding-block: 23px;
+        border-bottom: 1px solid var(--secondary-five);
+        position: sticky;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-color: var(--white);
+        z-index: 9999;
+    }
 }
-nav {
+.mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1;
+    .logo-left {
+        color: var(--heading);
+        font-weight: 500;
+        font-size: 18px;
+    }
+    @media (min-width: 992px) {
+        display: none;
+    }
+}
+.nav-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    @include breakpoint(max-lg) {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(6px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100dvh;
+        bottom: 0;
+        z-index: 999;
+        justify-content: start;
+        align-items: start;
+        display: block;
+        padding: 77px 32px;
+        transform: translateX(-100%);
+        transition: all ease 0.3s;
+        &.active {
+            transform: translateX(0);
+        }
+    }
+    .nav-right {
+        gap: 10px 32px;
+        @include breakpoint(max-lg) {
+            gap: 0px;
+        }
+    }
+    .register-btn {
+        font-weight: 600;
+        border-radius: 8px;
+        background-color: var(--white);
+        padding: 8px 15px;
+        @include breakpoint(max-lg) {
+            font-size: 32px;
+            color: var(--secondary-two);
+            font-weight: 500;
+            line-height: 1.4;
+            padding: 10px 24px;
+            border-radius: 12px;
+            background-color: transparent;
+            &:hover {
+                background-color: var(--primary-six);
+                color: var(--primary);
+            }
+        }
+    }
+    .badge {
+        background-color: #e0e0f8;
+        border-radius: 16px;
+        color: var(--heading);
+        font-size: 11px;
+        line-height: 15.4px;
+        padding: 2px 9px;
+        font-weight: 500;
+        margin-left: 2px;
+        @include breakpoint(max-lg) {
+            transform: translateY(-20px);
+            margin-left: 0px;
+        }
+    }
+    .close-btn {
+        width: 56px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 16px;
+        top: 8px;
+        transition: all ease 0.3s;
+        border-radius: 12px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--primary-six);
+        }
+    }
+    @media (min-width: 992px) {
+        .close-btn {
+            display: none !important;
+        }
+    }
 }
 .menu,
 .nav-right {
@@ -18,9 +122,35 @@ nav {
             color: var(--heading);
         }
     }
+    @include breakpoint(max-lg) {
+        display: block;
+        width: 100%;
+        li {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            a {
+                font-size: 32px;
+                color: var(--secondary-two) !important;
+                font-weight: 500;
+                line-height: 1.4;
+                padding: 10px 24px;
+                border-radius: 12px;
+
+                &:hover {
+                    background-color: var(--primary-six);
+                    color: var(--primary) !important;
+                }
+            }
+        }
+    }
 }
 .menu {
     gap: 10px 48px;
+    @include breakpoint(max-lg) {
+        gap: 0;
+        margin-bottom: 20px;
+    }
     h6 {
         font-size: 20px;
     }
@@ -28,25 +158,15 @@ nav {
         a {
             color: var(--heading);
         }
+        @include breakpoint(max-lg) {
+            &:first-child {
+                display: none;
+            }
+            .mobile-none {
+                display: none;
+            }
+        }
     }
 }
-.nav-right {
-    gap: 10px 32px;
-}
-.register-btn {
-    font-weight: 600;
-    border-radius: 8px;
-    background-color: var(--white);
-    padding: 8px 15px;
-}
-.badge {
-    background-color: #e0e0f8;
-    border-radius: 16px;
-    color: var(--heading);
-    font-size: 11px;
-    line-height: 15.4px;
-    padding: 2px 9px;
-    font-weight: 500;
-    margin-left: 2px;
-}
+
 // header part end

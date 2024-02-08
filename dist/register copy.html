@@ -1,6 +1,37 @@
 <!-- meta tags and other links -->
-@@include('../partial/_template-top.html')
-@@include('../partial/_header.html')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetAwed</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+<!-- header part start -->
+<header>
+    <div class="container">
+        <nav>
+            <ul class="menu">
+                <li>
+                    <h6>Title</h6>
+                </li>
+                <li><a href="">Hire</a></li>
+                <li><a href="">Candidate</a></li>
+                <li><a href="">Duo Junior Senior <span class="badge">BETA</span></a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="" class="register-btn">Register</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- header part end -->
 
 <!-- register form start -->
 <div class="register-area">
@@ -34,8 +65,8 @@
                 <!-- error class added to show error message -->
                 <div class="checkbox-gap error">
                     <div class="checkbox-wrapper">
-                        <input type="checkbox" id="term-agree2">
-                        <label for="term-agree2" class="term-agree">I confirm, i’ve read and accept <a href=""> Term of
+                        <input type="checkbox" id="term-agree">
+                        <label for="term-agree" class="term-agree">I confirm, i’ve read and accept <a href=""> Term of
                                 Service</a>, and <a href="">Privacy
                                 Policy</a></label>
                     </div>
@@ -50,24 +81,10 @@
 </div>
 <!-- register form end -->
 
-<!-- useful-link-only mobile start -->
-<div class="useful-link-mobile">
-    <div class="container">
-        <ul>
-            <li><a href="">About us</a></li>
-            <li><a href="">Terms of service</a></li>
-            <li><a href="">Privacy</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-        <div class="useful-bottom-content">
-            <p>Build in 🇪🇪 by 🇫🇷 and marketed by 🇮🇹</p>
-            <p>No cookies with personal data.</p>
-        </div>
-    </div>
-</div>
-<!-- useful-link-only  mobile end -->
-
-@@include('../partial/_template-bottom.html')
+<!-- jQuery library -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<!-- main js -->
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
