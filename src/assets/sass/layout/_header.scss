@@ -55,6 +55,12 @@ header {
         gap: 10px 32px;
         @include breakpoint(max-lg) {
             gap: 0px;
+            display: none;
+        }
+    }
+    .nav-right-mobile {
+        @media (min-width: 992px) {
+            display: none;
         }
     }
     .register-btn {
@@ -113,7 +119,8 @@ header {
     }
 }
 .menu,
-.nav-right {
+.nav-right,
+.nav-right-mobile {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -136,10 +143,10 @@ header {
                 line-height: 1.4;
                 padding: 10px 24px;
                 border-radius: 12px;
-
-                &:hover {
+                &.active {
                     background-color: var(--primary-six);
                     color: var(--primary) !important;
+                    font-weight: 600;
                 }
             }
         }

@@ -227,12 +227,11 @@ button {
 input[type=checkbox] {
   width: 20px;
   height: 20px;
-  vertical-align: top;
-  background-color: --white;
+  background-color: var(--white);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--secondary-four);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -316,6 +315,12 @@ header {
 @media (max-width: 991px) {
   .nav-wrapper .nav-right {
     gap: 0px;
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .nav-wrapper .nav-right-mobile {
+    display: none;
   }
 }
 .nav-wrapper .register-btn {
@@ -378,27 +383,32 @@ header {
 }
 
 .menu,
-.nav-right {
+.nav-right,
+.nav-right-mobile {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 .menu li a,
-.nav-right li a {
+.nav-right li a,
+.nav-right-mobile li a {
   color: var(--heading);
 }
 @media (max-width: 991px) {
   .menu,
-  .nav-right {
+  .nav-right,
+  .nav-right-mobile {
     display: block;
     width: 100%;
   }
   .menu li:not(:last-child),
-  .nav-right li:not(:last-child) {
+  .nav-right li:not(:last-child),
+  .nav-right-mobile li:not(:last-child) {
     margin-bottom: 20px;
   }
   .menu li a,
-  .nav-right li a {
+  .nav-right li a,
+  .nav-right-mobile li a {
     font-size: 32px;
     color: var(--secondary-two) !important;
     font-weight: 500;
@@ -406,10 +416,12 @@ header {
     padding: 10px 24px;
     border-radius: 12px;
   }
-  .menu li a:hover,
-  .nav-right li a:hover {
+  .menu li a.active,
+  .nav-right li a.active,
+  .nav-right-mobile li a.active {
     background-color: var(--primary-six);
     color: var(--primary) !important;
+    font-weight: 600;
   }
 }
 
@@ -497,6 +509,9 @@ header {
 .register-wrapper .checkbox-gap {
   margin-top: 32px;
   margin-bottom: 32px;
+}
+.register-wrapper .checkbox-gap #term-agree2 {
+  flex-shrink: 0;
 }
 .register-wrapper .checkbox-wrapper {
   display: flex;

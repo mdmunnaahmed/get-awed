@@ -53,6 +53,9 @@
     .checkbox-gap {
         margin-top: 32px;
         margin-bottom: 32px;
+        #term-agree2 {
+            flex-shrink: 0;
+        }
     }
     .checkbox-wrapper {
         display: flex;
