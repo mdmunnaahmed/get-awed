@@ -11,6 +11,9 @@ header {
         background-color: var(--white);
         z-index: 9999;
     }
+    &.header-bg-two {
+        background-color: #fefefe;
+    }
 }
 .mobile-nav {
     display: flex;
@@ -164,6 +167,12 @@ header {
     li {
         a {
             color: var(--heading);
+            &.active {
+                font-weight: 600;
+                background-color: #f8f8f8;
+                border-radius: 8px;
+                padding: 9px 15px;
+            }
         }
         @include breakpoint(max-lg) {
             &:first-child {
