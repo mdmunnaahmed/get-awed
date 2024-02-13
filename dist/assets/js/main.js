@@ -108,12 +108,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".more-filter-btn, .close-btn-two").click(function () {
-        $(".more-filter").toggleClass("active");
-    });
-});
-
-$(document).ready(function () {
     $(".thumb").click(function () {
         // Remove 'active' class from all thumbnails within the same structure
         $(this).siblings().removeClass("active");

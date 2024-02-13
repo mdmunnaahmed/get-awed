@@ -183,13 +183,13 @@
                 </div>
                 <div class="select-item-wrapper">
                     <div class="select-checkbox">
-                        <input type="radio" id="full-time">
+                        <input type="radio" id="full-time" name="remote1">
                         <label for="full-time">
                             Full-Time
                         </label>
                     </div>
                     <div class="select-checkbox">
-                        <input type="radio" id="freelacne">
+                        <input type="radio" id="freelacne" name="remote1">
                         <label for="freelacne" id="freelacne">
                             Freelacne
                         </label>
@@ -350,19 +350,19 @@
                             <div class="remote-wrapper__inner">
                                 <div class="select-checkbox">
                                     <input type="radio" id="remote1" name="remote">
-                                    <label for="remote1" name="remote">
+                                    <label for="remote1">
                                         Remote
                                     </label>
                                 </div>
                                 <div class="select-checkbox">
                                     <input type="radio" id="on-site1" name="remote">
-                                    <label for="on-site1" name="remote">
+                                    <label for="on-site1">
                                         On-Site
                                     </label>
                                 </div>
                                 <div class="select-checkbox">
                                     <input type="radio" id="flex1" name="remote">
-                                    <label for="flex1" name="remote">
+                                    <label for="flex1">
                                         Flexible
                                     </label>
                                 </div>
@@ -391,19 +391,19 @@
                     <span>Remote</span>
                     <div class="remote-wrapper__inner">
                         <div class="select-checkbox">
-                            <input type="radio" id="remote">
+                            <input type="radio" id="remote" name="remote">
                             <label for="remote">
                                 Remote
                             </label>
                         </div>
                         <div class="select-checkbox">
-                            <input type="radio" id="on-site">
+                            <input type="radio" id="on-site" name="remote">
                             <label for="on-site">
                                 On-Site
                             </label>
                         </div>
                         <div class="select-checkbox">
-                            <input type="radio" id="flex">
+                            <input type="radio" id="flex" name="remote">
                             <label for="flex">
                                 Flex
                             </label>
@@ -956,37 +956,65 @@
 
 <script>
     $(document).ready(function () {
-        $(".dropdown-item").each(function () {
-            var $dropdown = $(this).find(".dropdown");
-            var $dropdownList = $(this).find(".dropdown-list");
-            var $dropdownMain = $(this).find(".dropdown-main");
+        $('.thumb').click(function () {
+            // Remove 'active' class from all thumbnails within the same structure
+            $(this).siblings().removeClass('active');
 
-            // Click event handler for dropdown list items
-            $dropdownList.find("li label").click(function (event) {
+            // Add 'active' class to the clicked thumbnail
+            $(this).addClass('active');
+
+            // Get the src attribute of the clicked thumbnail
+            var newSrc = $(this).find('img').attr('src');
+
+            // Set the src attribute of the main profile image within the same structure
+            $(this).closest('.single-user-profile-item__thumb').find('.main-thumb').attr('src', newSrc);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#txtInput, #txtInput2').keypress(function (event) {
+            if (event.which === 13) { // Enter key pressed
+                var keyword = $(this).val().trim();
+                if (keyword !== '') {
+                    $('#keywordsContainer, #keywordsContainer2').append('<div class="keyword">' + keyword + '<span class="remove-icon">&#10006;</span></div>');
+                    $(this).val('');
+                }
+            }
+        });
+
+        $('#keywordsContainer, #keywordsContainer2').on('click', '.remove-icon', function () {
+            $(this).parent('.keyword').remove();
+        });
+    });
+
+    $(document).ready(function () {
+        $('.dropdown').click(function () {
+            var $dropdownList = $(this).siblings('.dropdown-list');
+            $('.dropdown-list').not($dropdownList).hide(); // Hide all other dropdown lists
+            $dropdownList.toggle();
+        });
+
+        $('.dropdown-item').each(function () {
+            var $dropdown = $(this).find('.dropdown');
+            var $dropdownList = $(this).find('.dropdown-list');
+            var $dropdownMain = $(this).find('.dropdown-main');
+
+            $dropdownList.find('li label').click(function () {
                 var selectedText = $(this).text().trim();
                 $dropdownMain.text(selectedText);
                 $dropdownList.hide();
-                event.stopPropagation(); // Prevent the click event from propagating to the document
-            });
-
-            // Click event handler for the document to hide dropdown list when clicked outside
-            $(document).click(function (event) {
-                // Check if the clicked element is not within the dropdown list or dropdown
-                if (
-                    !$(event.target).closest(".dropdown-list").length &&
-                    !$(event.target).closest(".dropdown").length
-                ) {
-                    $dropdownList.hide();
-                }
             });
         });
     });
 
     $(document).ready(function () {
-        $(".more-filter-btn, .close-btn-two").click(function () {
-            $(".more-filter").toggleClass("active");
+        $('.more-filter-btn, .close-btn-two').click(function () {
+            $('.more-filter').toggleClass('active');
         });
     });
+
 </script>
 
 </body>
