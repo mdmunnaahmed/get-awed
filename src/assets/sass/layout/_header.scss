@@ -1,6 +1,15 @@
 // header part start
 header {
     padding-block: 24px;
+    &.padding-y {
+        padding-block: 34px;
+        @include breakpoint(max-lg) {
+            padding-block: 23px;
+        }
+    }
+    .container {
+        max-width: 1180px;
+    }
     @include breakpoint(max-lg) {
         padding-block: 23px;
         border-bottom: 1px solid var(--secondary-five);
