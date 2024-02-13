@@ -1,17 +1,5 @@
 <!-- meta tags and other links -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetAwed</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
-    <!-- main css -->
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-
-<body>
+@@include('../partial/_template-top.html')
 <!-- header part start -->
 <header class="header-bg-two">
     <div class="container">
@@ -49,374 +37,31 @@
 </header>
 <!-- header part end -->
 
-<!-- hero section start -->
-<section class="hero-section" style="background: url(assets/images/hero/banner-bg.png) center;">
+<!-- profile user start -->
+<section class="profile-user">
     <div class="container">
-        <div class="hero-content">
-            <span class="hero-content__commission">Free to use • 0% commission</span>
-            <h1 class="hero-content__title"><span>Engage with your next</span> UX Designer, Illustrator, Video editor...
-            </h1>
-            <p>The best creatives carefully handpicked, interviewed and available.</p>
+        <div class="profile-user-wrapper">
+            <div class="profile-user-left">
+                <div class="profile-user-info-wrapper">
+                    <div class="author-wrapper">
+                        <img src="assets/images/user/author1.png" alt="user img">
+                        <div class="content">
+                            <h6 class="name">Samuel <span class="available-text">Available</span></h6>
+                            <span class="dollar-text">280€ / day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-user-right">
+
+            </div>
         </div>
     </div>
 </section>
-<!-- hero section end -->
+<!-- profile user end -->
 
 <!-- filter section start -->
-<section class="filter-section">
-    <div class="search-filter-wrapper">
-        <div class="container">
-            <div class="search-filter-top">
-                <div class="dropdown-wrapper">
-                    <div class="dropdown-item">
-                        <span>I’m looking for :</span>
-                        <div class="dropdown">
-                            <label for="" class="dropdown-main">
-                                <input type="radio">
-                                🎨 UX Designer
-                            </label>
-                            <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                        </div>
-                        <ul class="dropdown-list">
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 UX Designer
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📹 Video Maker
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📼 Video Editor
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 Illustrator
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dropdown-item style-two">
-                        <span class="destop-text">City</span>
-                        <span class="mobile-text">In</span>
-                        <div class="dropdown">
-                            <label for="" class="dropdown-main">
-                                <input type="radio">
-                                🇪🇪 Tallinn
-                            </label>
-                            <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                        </div>
-                        <ul class="dropdown-list">
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 UX Designer
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📹 Video Maker
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📼 Video Editor
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 Illustrator
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="border-1"></span>
-                    <div class="dropdown-item style-two">
-                        <span class="destop-text">Price per day</span>
-                        <span class="mobile-text">For</span>
-                        <div class="dropdown">
-                            <label for="" class="dropdown-main">
-                                <input type="radio">
-                                300€ / day
-                            </label>
-                            <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                        </div>
-                        <ul class="dropdown-list">
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 UX Designer
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📹 Video Maker
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    📼 Video Editor
-                                </label>
-                            </li>
-                            <li>
-                                <label for="">
-                                    <input type="radio">
-                                    🎨 Illustrator
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="border-1"></span>
-                </div>
-                <div class="select-item-wrapper">
-                    <div class="select-checkbox">
-                        <input type="radio" id="full-time">
-                        <label for="full-time">
-                            Full-Time
-                        </label>
-                    </div>
-                    <div class="select-checkbox">
-                        <input type="radio" id="freelacne">
-                        <label for="freelacne" id="freelacne">
-                            Freelacne
-                        </label>
-                    </div>
-                </div>
-                <div class="mobile-more-filters-wrapper">
-                    <button type="submit" class="btn full secondary more-filter-btn">More Filters</button>
-                    <button type="submit" class="btn full primary">Search</button>
-
-                    <div class="more-filter">
-                        <span class="close-btn-two">
-                            <img src="assets/images/icons/close.svg" alt="close icon">
-                        </span>
-                        <div class="dropdown-item">
-                            <span>I’m looking for :</span>
-                            <div class="dropdown">
-                                <label for="" class="dropdown-main">
-                                    <input type="radio">
-                                    🎨 UX Designer
-                                </label>
-                                <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                            </div>
-                            <ul class="dropdown-list">
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 UX Designer
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📹 Video Maker
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📼 Video Editor
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 Illustrator
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-item">
-                            <span>In</span>
-                            <div class="dropdown">
-                                <label for="" class="dropdown-main">
-                                    <input type="radio">
-                                    🇪🇪 Tallinn
-                                </label>
-                                <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                            </div>
-                            <ul class="dropdown-list">
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 UX Designer
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📹 Video Maker
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📼 Video Editor
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 Illustrator
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-item">
-                            <span>For</span>
-                            <div class="dropdown">
-                                <label for="" class="dropdown-main">
-                                    <input type="radio">
-                                    300€ / day
-                                </label>
-                                <img src="assets/images/icons/dropdown-icon.svg" alt="dropdown icon">
-                            </div>
-                            <ul class="dropdown-list">
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 UX Designer
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📹 Video Maker
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        📼 Video Editor
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <input type="radio">
-                                        🎨 Illustrator
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="select-item-wrapper">
-                            <span>Position</span>
-                            <div class="select-wrapper-inner">
-                                <!-- <div class="select-checkbox">
-                                    <input type="radio" id="full-time">
-                                    <label for="full-time">
-                                        Full-Time
-                                    </label>
-                                </div> -->
-                                <div class="select-checkbox">
-                                    <input type="radio" id="remote3" name="select1">
-                                    <label for="remote3">
-                                        Freelacne
-                                    </label>
-                                </div>
-                                <div class="select-checkbox">
-                                    <input type="radio" id="remote2" name="select1">
-                                    <label for="remote2">
-                                        Full-Time
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-wrapper">
-                            <span class="skill-text">Skills</span>
-                            <div class="input-wrapper">
-                                <div class="input-area" id="divKeywords">
-                                    <div id="keywordsContainer2">
-                                        <!-- Keywords will be dynamically added here -->
-                                    </div>
-                                    <input type="text" id="txtInput2" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="remote-wrapper">
-                            <span>Remote</span>
-                            <div class="remote-wrapper__inner">
-                                <div class="select-checkbox">
-                                    <input type="radio" id="remote1" name="remote">
-                                    <label for="remote1" name="remote">
-                                        Remote
-                                    </label>
-                                </div>
-                                <div class="select-checkbox">
-                                    <input type="radio" id="on-site1" name="remote">
-                                    <label for="on-site1" name="remote">
-                                        On-Site
-                                    </label>
-                                </div>
-                                <div class="select-checkbox">
-                                    <input type="radio" id="flex1" name="remote">
-                                    <label for="flex1" name="remote">
-                                        Flexible
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="search-btn-wrapper">
-                                <button type="submit" class="btn primary full">Search</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="search-filter-bottom">
-                <div class="skill-wrapper">
-                    <span class="skill-text">Skills</span>
-                    <div class="input-wrapper">
-                        <div class="input-area" id="divKeywords">
-                            <div id="keywordsContainer">
-                                <!-- Keywords will be dynamically added here -->
-                            </div>
-                            <input type="text" id="txtInput" />
-                        </div>
-                    </div>
-                </div>
-                <span class="border-1"></span>
-                <div class="remote-wrapper">
-                    <span>Remote</span>
-                    <div class="remote-wrapper__inner">
-                        <div class="select-checkbox">
-                            <input type="radio" id="remote">
-                            <label for="remote">
-                                Remote
-                            </label>
-                        </div>
-                        <div class="select-checkbox">
-                            <input type="radio" id="on-site">
-                            <label for="on-site">
-                                On-Site
-                            </label>
-                        </div>
-                        <div class="select-checkbox">
-                            <input type="radio" id="flex">
-                            <label for="flex">
-                                Flex
-                            </label>
-                        </div>
-                        <span></span>
-                        <div class="search-btn-wrapper">
-                            <button type="submit" class="btn primary">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- <section class="filter-section">
     <div class="container">
         <div class="user-profile-wrapper">
             <div class="single-user-profile-item">
@@ -923,71 +568,12 @@
             </ul>
         </nav>
     </div>
-</section>
+</section> -->
 <!-- filter section start -->
 
 
-<!-- footer section start  -->
-<footer>
-    <div class="container">
-        <!-- useful-link-only mobile start -->
-        <div class="useful-link-mobile">
-            <ul>
-                <li><a href="">About us</a></li>
-                <li><a href="">Terms of service</a></li>
-                <li><a href="">Privacy</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <div class="useful-bottom-content">
-                <div class="footer-logo"><a href=""><img src="assets/images/footer-logo.png" alt="footer logo"></a>
-                </div>
-                <p>Build in 🇪🇪 by 🇫🇷 and marketed by 🇮🇹</p>
-                <p>No cookies with personal data.</p>
-            </div>
-        </div>
-    </div>
-    <!-- useful-link-only  mobile end -->
-</footer>
-<!-- footer section end -->
-<!-- jQuery library -->
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<!-- main js -->
-<script src="assets/js/main.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $(".dropdown-item").each(function () {
-            var $dropdown = $(this).find(".dropdown");
-            var $dropdownList = $(this).find(".dropdown-list");
-            var $dropdownMain = $(this).find(".dropdown-main");
-
-            // Click event handler for dropdown list items
-            $dropdownList.find("li label").click(function (event) {
-                var selectedText = $(this).text().trim();
-                $dropdownMain.text(selectedText);
-                $dropdownList.hide();
-                event.stopPropagation(); // Prevent the click event from propagating to the document
-            });
-
-            // Click event handler for the document to hide dropdown list when clicked outside
-            $(document).click(function (event) {
-                // Check if the clicked element is not within the dropdown list or dropdown
-                if (
-                    !$(event.target).closest(".dropdown-list").length &&
-                    !$(event.target).closest(".dropdown").length
-                ) {
-                    $dropdownList.hide();
-                }
-            });
-        });
-    });
-
-    $(document).ready(function () {
-        $(".more-filter-btn, .close-btn-two").click(function () {
-            $(".more-filter").toggleClass("active");
-        });
-    });
-</script>
+@@include('../partial/_footer.html')
+@@include('../partial/_template-bottom.html')
 
 </body>
 

@@ -25,7 +25,7 @@
     }
 }
 
-// input[type="checkbox"] {
+// input[type="radio"] {
 //     width: 20px;
 //     height: 20px;
 //     border-radius: 6px !important;
@@ -33,10 +33,9 @@
 //     border-color: var(--secondary-four);
 // }
 
-input[type="checkbox"] {
+input[type="radio"] {
     width: 20px;
     height: 20px;
-    // vertical-align: top;
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center;
@@ -48,7 +47,7 @@ input[type="checkbox"] {
     -webkit-print-color-adjust: exact;
     border-radius: 6px;
 }
-input[type="checkbox"]:checked {
+input[type="radio"]:checked {
     background: url("../images/icons/check.svg");
     background-repeat: no-repeat;
     background-position: center;
