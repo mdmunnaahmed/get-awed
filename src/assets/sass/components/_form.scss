@@ -28,13 +28,17 @@
     display: block;
     margin-bottom: 8px;
 }
-// input[type="radio"] {
-//     width: 20px;
-//     height: 20px;
-//     border-radius: 6px !important;
-//     background-color: var(--white);
-//     border-color: var(--secondary-four);
-// }
+.select-radio {
+    &.style-left {
+        label {
+            padding-right: 24px;
+            padding-left: 48px;
+        }
+        input {
+            left: 18px;
+        }
+    }
+}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -59,4 +63,98 @@ input[type="checkbox"]:checked {
     background-size: contain;
     background-color: var(--base);
     border-color: var(--base);
+}
+.style-two input[type="radio"]:checked {
+    background: var(--white) !important;
+    &::before {
+        opacity: 1;
+    }
+}
+.style-two input[type="radio"] {
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        border-radius: 50%;
+        background: var(--primary);
+        margin: 2px;
+        opacity: 0;
+    }
+}
+
+.select-radio {
+    &.style-two {
+        input[type="radio"]:checked ~ label {
+            background-color: var(--white) !important;
+            border-color: var(--secondary-four) !important;
+        }
+    }
+}
+
+.input-upload-file {
+    border: 1px dashed var(--secondary-four);
+    border-radius: 16px;
+    position: relative;
+    label {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        display: block;
+    }
+    p {
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+    }
+    input {
+        padding: 16px 18px;
+        opacity: 0;
+        height: 70px;
+        width: 100%;
+        margin: 0 !important;
+        position: relative;
+        z-index: 3;
+        cursor: pointer;
+        @include breakpoint(max-md) {
+            height: 92px;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-inline: 18px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding-right: 22px;
+        z-index: 0;
+    }
+    .upload-text-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        label {
+            @include breakpoint(max-md) {
+                max-width: 190px;
+                line-height: 22px;
+                font-size: 16px;
+            }
+        }
+    }
+    .what-mark {
+        font-weight: 500;
+        color: #000;
+        width: 40px;
+        background-color: var(--secondary-six);
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

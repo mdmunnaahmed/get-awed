@@ -10,7 +10,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 1rem;
-    color: hsl(var(--body));
+    color: var(--body);
     font-family: var(--body-font);
     line-height: 1.5;
     background-color: #f5f5f6;
@@ -47,7 +47,7 @@ h6 {
     margin: 0;
     font-weight: 700;
     line-height: 1.375;
-    color: hsl(var(--heading));
+    color: var(--heading);
     font-family: var(--heading-font);
 }
 h1 > a,
@@ -65,9 +65,16 @@ h1 {
 h3 {
     font-size: 32px;
     font-weight: 600;
+    @include breakpoint(max-lg) {
+        font-size: 28px;
+    }
 }
 h5 {
     font-size: 20px;
+    font-weight: 600;
+}
+h6 {
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -96,4 +103,8 @@ h5 {
     .container {
         max-width: 1150px;
     }
+}
+
+.bg-body-two {
+    background-color: var(--secondary-seven);
 }

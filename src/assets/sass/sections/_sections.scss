@@ -520,22 +520,17 @@
         background-color: var(--white);
         cursor: pointer;
     }
-    label#freelacne {
-        padding-right: 24px;
-        padding-left: 48px;
-    }
+
     input {
-        width: 16px;
-        height: 16px;
         border-radius: 50%;
         position: absolute;
-        right: 22px;
+        right: 20px;
         top: 50%;
-        transform: translateY(-55%);
+        transform: translateY(-60%);
         z-index: 2;
     }
     input#freelacne {
-        left: 20px;
+        left: 18px;
         right: auto;
         transform: translateY(-60%);
     }
@@ -1511,3 +1506,199 @@
     }
 }
 // send message box end
+
+// form profile start
+.form-profile-section {
+    padding-top: 65px;
+    padding-bottom: 190px;
+    @include breakpoint(max-md) {
+        padding-top: 15px;
+        padding-bottom: 92px;
+    }
+    .container {
+        max-width: 1112px;
+        @include breakpoint(max-md) {
+            padding-inline: 0;
+        }
+    }
+}
+.form-profile-top {
+    margin-bottom: 28px;
+    @include breakpoint(max-md) {
+        padding-inline: 16px;
+        margin-bottom: 50px;
+    }
+    .title {
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 4px;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+        li {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--body);
+            position: relative;
+        }
+    }
+}
+.dot {
+    position: absolute;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    right: -12px;
+    border-radius: 50%;
+    background-color: var(--secondary-four);
+}
+.cmn-form-profilebox-wrapper {
+    background-color: var(--white);
+    margin-bottom: 32px;
+    padding: 32px 48px;
+    border-radius: 18px;
+    border: 1px solid #f7f7f7;
+    box-shadow: 0px 1px 2px rgba(28, 27, 31, 0.04);
+    @include breakpoint(max-md) {
+        padding: 40px 16px;
+        border-radius: 8px;
+        margin-bottom: 64px;
+    }
+    .title {
+        margin-bottom: 48px;
+        @include breakpoint(max-md) {
+            margin-bottom: 32px;
+        }
+    }
+}
+.general {
+    .form-group {
+        align-items: start !important;
+    }
+}
+.cmn-form-profilebox-wrapper {
+    &.pricing-position {
+        position: relative;
+        .form-profilebox {
+            @include breakpoint(max-md) {
+                .form-group {
+                    input {
+                        margin-bottom: 0px !important;
+                    }
+                }
+            }
+        }
+        .input-right {
+            position: relative;
+        }
+        .fixed-right {
+            position: absolute;
+            right: 24px;
+            top: 17px;
+        }
+    }
+}
+.remote-select-radio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.form-profilebox {
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include breakpoint(max-lg) {
+            // gap: 30px;
+            // justify-content: space-between;
+        }
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        .content-left {
+            width: calc(100% - 530px);
+            @include breakpoint(max-lg) {
+                width: calc(100% - 400px);
+            }
+            @include breakpoint(max-md) {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+            h6 {
+                // margin-bottom: 2px;
+                // position: relative;
+                .dot {
+                    position: unset;
+                    transform: translate(2px, -2px);
+                }
+            }
+            p {
+                margin: 0;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        .input-right {
+            width: 530px;
+            @include breakpoint(max-lg) {
+                width: 400px;
+            }
+            @include breakpoint(max-md) {
+                width: 100%;
+            }
+            input {
+                color: var(--secondary-two);
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
+            }
+            input::placeholder {
+                color: var(--body);
+            }
+        }
+    }
+}
+.add-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2573c1;
+    font-size: 16px;
+    font-weight: 500;
+    &:hover {
+        color: #2573c1;
+    }
+}
+.info-alert {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background-color: var(--secondary-six);
+    width: 100%;
+    p {
+        margin: 0;
+    }
+    span {
+        font-weight: 700;
+    }
+}
+.next-btn-wrapper {
+    text-align: end;
+    padding-top: 35px;
+    @include breakpoint(max-md) {
+        padding-top: 0px;
+        text-align: center;
+        margin-top: -35px;
+        padding-inline: 16px;
+        button {
+            width: 100%;
+        }
+    }
+}
+// form profile end
