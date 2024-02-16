@@ -502,7 +502,7 @@
         }
     }
 }
-.select-checkbox {
+.select-radio {
     position: relative;
     display: inline-block;
     label {
@@ -1073,18 +1073,6 @@
                 @include breakpoint(max-lg) {
                     padding-top: 16px;
                 }
-                li {
-                    a {
-                        display: inline-block;
-                        border: 1px solid var(--secondary-four);
-                        border-radius: 8px;
-                        line-height: 1.3;
-                        padding: 6px 10px;
-                        color: var(--heading);
-                        font-weight: 500;
-                        font-size: 13px;
-                    }
-                }
             }
             .text {
                 font-size: 14px;
@@ -1155,22 +1143,13 @@
         }
     }
     .skill-keyword-wrpaper {
-        margin: -6px;
         padding-top: 22px;
         padding-bottom: 32px;
+        gap: 12px;
+        display: flex;
+        flex-wrap: wrap;
         @include breakpoint(max-lg) {
             padding-bottom: 24px;
-        }
-        li {
-            display: inline-block;
-            margin: 6px;
-            border: 1px solid var(--secondary-four);
-            border-radius: 8px;
-            line-height: 1.3;
-            padding: 6px 10px;
-            color: var(--heading);
-            font-weight: 500;
-            font-size: 14px;
         }
     }
 }
@@ -1211,17 +1190,6 @@
         flex-wrap: wrap;
         gap: 8px;
         margin-bottom: 34px;
-        li {
-            font-size: 14px;
-            color: var(--heading);
-            padding: 8px 16px;
-            border: 1px solid var(--secondary-four);
-            border-radius: 8px;
-            font-weight: 500;
-            span {
-                color: #868686;
-            }
-        }
     }
     p {
         margin: 0px;
@@ -1233,16 +1201,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        li {
-            display: inline-block;
-            border: 1px solid var(--secondary-four);
-            border-radius: 8px;
-            line-height: 1.3;
-            padding: 6px 10px;
-            color: var(--heading);
-            font-weight: 500;
-            font-size: 14px;
-        }
     }
 }
 .social-follower {
@@ -1435,3 +1393,121 @@
         }
     }
 }
+
+// send message box start
+.send-message-box-section {
+    padding-bottom: 100px;
+    padding-top: 80px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 65px;
+        padding-top: 40px;
+    }
+    .back-btn-left {
+        max-width: 630px;
+        margin-inline: auto;
+        padding-bottom: 40px;
+        @include breakpoint(max-lg) {
+            padding-bottom: 0;
+        }
+        a {
+            font-size: 16px;
+            font-weight: 500;
+            gap: 10px;
+            @include breakpoint(max-lg) {
+                font-size: 14px;
+                gap: 8px;
+            }
+        }
+        img {
+            width: 24px;
+            height: 24px;
+            @include breakpoint(max-lg) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+.send-message-box-wrapper {
+    background-color: var(--white);
+    max-width: 630px;
+    margin-inline: auto;
+    border-radius: 18px;
+    padding-block: 40px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 0;
+    }
+    .profile-user-info-wrapper {
+        padding: 0;
+        border-radius: 0px;
+        padding-inline: 55px;
+        border-bottom: 1px solid #f1f1f1;
+        padding-bottom: 25px;
+        margin-bottom: 38px;
+        @include breakpoint(max-lg) {
+            padding-inline: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 35px;
+        }
+    }
+    form {
+        padding-inline: 55px;
+        @include breakpoint(max-lg) {
+            padding-inline: 0;
+        }
+    }
+    label {
+        font-weight: 500;
+        line-height: 1.4;
+    }
+    .form-group {
+        margin-bottom: 25px;
+    }
+    textarea,
+    input {
+        &::placeholder {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--body);
+        }
+    }
+    textarea {
+        height: 170px;
+    }
+    .btn-group {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        button {
+            box-shadow: 0px 10px 40px rgba(12, 20, 66, 0.06),
+                0px 2px 4px rgba(12, 20, 66, 0.12),
+                inset 0px -1px 2px rgba(12, 20, 66, 0.1);
+        }
+        a {
+            color: var(--body);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}
+.input-radio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    input {
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 18px;
+    }
+    label {
+        font-size: 14px;
+        color: #5e5867;
+        padding-right: 16px;
+        padding-left: 42px;
+        height: 40px;
+    }
+}
+// send message box end
