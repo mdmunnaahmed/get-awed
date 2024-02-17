@@ -1544,6 +1544,37 @@
             position: relative;
         }
     }
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include breakpoint(max-lg) {
+            .button-right {
+                display: none;
+            }
+        }
+    }
+    &.style-two {
+        @media (min-width: 992px) {
+            ul {
+                li {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @include breakpoint(max-lg) {
+            margin-bottom: 22px;
+            ul {
+                li {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 .dot {
     position: absolute;
@@ -1701,4 +1732,136 @@
         }
     }
 }
+.add-experience-wrapper {
+    padding: 64px 24px;
+    border-radius: 18px;
+    background: var(--primary-six);
+    text-align: center;
+    @include breakpoint(max-lg) {
+        margin-inline: 16px;
+    }
+    .text {
+        margin: 0;
+        margin-bottom: 32px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.4;
+        @include breakpoint(max-lg) {
+            color: var(--heading);
+            margin-bottom: 28px;
+        }
+    }
+}
+.add-experience-item-wrapper {
+    @include breakpoint(max-lg) {
+        // padding-inline: 16px;
+    }
+    button.secondary {
+        img {
+            filter: none;
+        }
+    }
+}
+.experience-button-wrapper {
+    padding-top: 10px;
+    @media (min-width: 992px) {
+        .btn.primary {
+            display: none;
+        }
+    }
+    @include breakpoint(max-lg) {
+        padding-inline: 16px;
+        padding-top: 0px;
+        button {
+            margin-top: 40px;
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.experience-item {
+    background: var(--white);
+    border: 1px solid var(--secondary-five);
+    border-radius: 16px;
+    padding: 32px 35px;
+    padding-right: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+    transition: all ease 0.3s;
+    @include breakpoint(max-lg) {
+        border-bottom-color: transparent;
+        border-bottom-color: transparent;
+        &:not(:first-child) {
+            border-bottom-color: transparent;
+        }
+    }
+    &:hover,
+    &.active {
+        box-shadow: 0px 2px 8px rgba(28, 27, 31, 0.12);
+        border-bottom-color: transparent;
+    }
+    @include breakpoint(max-lg) {
+        margin-bottom: 0;
+        border-radius: 0;
+        padding: 23px 16px;
+        box-shadow: none;
+    }
+    .experience-content-left {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        @include breakpoint(max-lg) {
+            gap: 24px;
+        }
+        .drag-drop {
+            cursor: pointer;
+            circle {
+                transition: all ease 0.2s;
+            }
+            &:hover {
+                circle {
+                    fill: var(--primary);
+                }
+            }
+        }
+        .content {
+            h5,
+            p {
+                margin: 0;
+                font-size: 20px;
+            }
+            p {
+                line-height: 1.4;
+            }
+            h5 {
+                margin-bottom: 9px;
+            }
+        }
+    }
+    .experience-content-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        @include breakpoint(max-lg) {
+            display: none;
+        }
+        li {
+            a {
+                path {
+                    transition: all ease 0.2s;
+                }
+                &:hover {
+                    path {
+                        fill: var(--secondary-two);
+                    }
+                }
+            }
+        }
+    }
+}
+
 // form profile end

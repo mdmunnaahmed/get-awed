@@ -31,6 +31,7 @@
     &.secondary {
         color: var(--secondary);
         background-color: var(--third-two);
+        border-color: var(--third-two);
         &.disabled {
             color: #8e8b96;
             background-color: #eceff2;
