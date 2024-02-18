@@ -2629,7 +2629,7 @@ footer .useful-link-mobile .useful-bottom-content p {
   }
 }
 .experience-item .experience-content-left .drag-drop {
-  cursor: pointer;
+  cursor: move;
 }
 .experience-item .experience-content-left .drag-drop circle {
   transition: all ease 0.2s;
@@ -2658,10 +2658,13 @@ footer .useful-link-mobile .useful-bottom-content p {
     display: none;
   }
 }
-.experience-item .experience-content-right li a path {
+.experience-item .experience-content-right li {
+  cursor: pointer;
+}
+.experience-item .experience-content-right li path {
   transition: all ease 0.2s;
 }
-.experience-item .experience-content-right li a:hover path {
+.experience-item .experience-content-right li:hover path {
   fill: var(--secondary-two);
 }
 

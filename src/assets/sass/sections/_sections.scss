@@ -1827,7 +1827,7 @@
             gap: 24px;
         }
         .drag-drop {
-            cursor: pointer;
+            cursor: move;
             circle {
                 transition: all ease 0.2s;
             }
@@ -1859,14 +1859,13 @@
             display: none;
         }
         li {
-            a {
+            cursor: pointer;
+            path {
+                transition: all ease 0.2s;
+            }
+            &:hover {
                 path {
-                    transition: all ease 0.2s;
-                }
-                &:hover {
-                    path {
-                        fill: var(--secondary-two);
-                    }
+                    fill: var(--secondary-two);
                 }
             }
         }
