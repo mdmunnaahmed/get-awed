@@ -1621,14 +1621,23 @@
                 }
             }
         }
-        .input-right {
-            position: relative;
+    }
+    .input-right {
+        position: relative;
+        .skill-wrapper {
+            width: 100% !important;
         }
-        .fixed-right {
-            position: absolute;
-            right: 24px;
-            top: 17px;
-        }
+    }
+    .fixed-right {
+        position: absolute;
+        right: 24px;
+        top: 17px;
+        border: 0;
+        outline: 0;
+        font-weight: 500;
+        color: var(--body);
+        font-size: 16px;
+        font-family: var(--heading);
     }
 }
 .remote-select-radio-wrapper {
@@ -1790,19 +1799,19 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;
-    position: relative;
     transition: all ease 0.3s;
     @include breakpoint(max-lg) {
-        border-bottom-color: transparent;
-        border-bottom-color: transparent;
-        &:not(:first-child) {
-            border-bottom-color: transparent;
-        }
+        border-top: transparent;
+        border-right: transparent;
+        border-left: transparent;
     }
     &:hover,
     &.active {
         box-shadow: 0px 2px 8px rgba(28, 27, 31, 0.12);
-        border-bottom-color: transparent;
+        position: relative;
+        @include breakpoint(max-lg) {
+            border-color: transparent;
+        }
     }
     @include breakpoint(max-lg) {
         margin-bottom: 0;
@@ -1863,5 +1872,261 @@
         }
     }
 }
+.work-detail-wrapper {
+    overflow: hidden;
+    .form--control {
+        margin-bottom: 0px !important;
+    }
+    @include breakpoint(max-md) {
+        background-color: var(--white);
+        box-shadow: none;
+        margin-bottom: 0;
+        padding-block: 0px;
+        background-color: transparent;
+        .input-wrapper {
+            height: 92px;
+            align-items: flex-start;
+            overflow-y: auto;
+            .input-area {
+                overflow-y: scroll;
+                display: block;
+                #keywordsContainer2 {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+.work-detail-bottom-content {
+    padding-top: 40px;
+    margin-top: 40px;
+    position: relative;
+    @include breakpoint(max-md) {
+        padding-top: 30px;
+        margin-top: 0px;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        left: -48px;
+        top: 0;
+        right: -48px;
+        width: 120%;
+        height: 1px;
+        background-color: var(--secondary-five);
+        @include breakpoint(max-md) {
+            display: none;
+        }
+    }
+    p {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    h5 {
+        margin-bottom: 4px;
+        @include breakpoint(max-md) {
+            margin-bottom: 16px;
+        }
+    }
+    .button-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-top: 32px;
+        position: relative;
+        margin-top: 50px;
+        @include breakpoint(max-lg) {
+            margin-top: 10px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            left: -48px;
+            top: 0;
+            right: -48px;
+            width: 120%;
+            height: 1px;
+            background-color: var(--secondary-five);
+            @include breakpoint(max-lg) {
+                display: none;
+            }
+        }
+        gap: 24px 12px;
 
+        .cancel-btn {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        a {
+            @include breakpoint(max-md) {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+.picture-upload-wrapper {
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 17px;
+    .picture-upload-item {
+        width: 250px;
+        height: 222px;
+        border-radius: 18px;
+        border: 1px dashed var(--secondary-four);
+        position: relative;
+        @include breakpoint(max-md) {
+            width: 100%;
+            height: 300px;
+        }
+        img {
+            border-radius: 18px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .delete-icon {
+            position: absolute;
+            top: 8px;
+            right: 11px;
+            cursor: pointer;
+            width: 45px;
+            height: 45px;
+        }
+        &.add-new-img {
+            position: relative;
+            padding-top: 23px;
+            padding-bottom: 30px;
+            padding-left: 24px;
+            padding-right: 15px;
+            transition: all ease 0.3s;
+            .hover-content-link-video {
+                border: 1px solid var(--secondary-five);
+                background-color: var(--white);
+                border-radius: 18px;
+                text-align: center;
+                padding: 17px 30px 25px;
+                width: 315px;
+                position: absolute;
+                bottom: -58%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 3;
+                opacity: 0;
+                transition: all ease 0.3s;
+                visibility: hidden;
+                @include breakpoint(max-md) {
+                    bottom: -44%;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: -20px;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--secondary-five);
+                    clip-path: polygon(100% 100%, 0 100%, 50% 60%);
+                }
+                input {
+                    width: 100%;
+                    height: 38px;
+                    padding: 5px 16px;
+                    font-size: 14px;
+                }
+                p {
+                    color: var(--secondary-two);
+                    font-size: 14px;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+            }
+            &:hover {
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+                .hover-content-link-video {
+                    opacity: 1;
+                    display: block;
+                    visibility: visible;
+                }
+            }
+            h5 {
+                margin-bottom: 16px;
+            }
+            h6 {
+                font-weight: 500;
+                margin-bottom: 2px;
+                font-size: 14px;
+            }
+            p {
+                font-size: 13px;
+                margin-bottom: 19px;
+                @include breakpoint(max-md) {
+                    margin-bottom: 70px;
+                }
+            }
+            .upload-add-new-img {
+                cursor: pointer;
+                opacity: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                position: absolute;
+            }
+            .upload-icon {
+                text-align: center;
+                margin-inline: auto;
+                width: 64px;
+                height: 64px;
+                @include breakpoint(max-md) {
+                    display: none;
+                }
+            }
+            .mobile-upload-btn {
+                margin-inline: auto;
+                text-align: center;
+                @media (min-width: 768px) {
+                    display: none;
+                }
+                img {
+                    width: 16px;
+                    height: 16px;
+                    filter: invert(0%);
+                }
+            }
+        }
+    }
+}
+.form-profile-two-section {
+    padding-bottom: 70px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 40px;
+    }
+    .form-profile-top {
+        ul {
+            li {
+                &:not(:first-child) {
+                    display: none;
+                }
+                a {
+                    text-decoration: underline;
+                    font-size: 14px;
+                    color: var(--heading);
+                    font-weight: 500;
+                }
+                @include breakpoint(max-md) {
+                    display: block !important;
+                    &:first-child {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
 // form profile end
