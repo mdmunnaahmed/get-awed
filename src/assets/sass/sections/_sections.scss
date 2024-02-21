@@ -305,9 +305,10 @@
                 flex-wrap: wrap;
                 gap: 16px 24px;
             }
-            .skill-wrapper input {
-                width: 100%;
+            .skill-wrapper textarea {
                 height: 30px;
+                border: none;
+                outline: none;
             }
             .input-area {
                 overflow-y: scroll;
@@ -610,11 +611,13 @@
         display: flex;
         // flex-wrap: wrap;
     }
-    input {
+    textarea {
         border: none;
         outline: none;
         background-color: transparent;
         color: var(--heading);
+        scrollbar-width: none;
+        width: -webkit-fill-available;
     }
     .keyword {
         border-radius: 8px;
@@ -1897,7 +1900,8 @@
                 overflow-y: scroll;
                 display: block;
                 #keywordsContainer2 {
-                    flex-wrap: wrap;
+                    flex-wrap: flex;
+                    overflow-y: scroll;
                 }
             }
         }
@@ -2213,12 +2217,23 @@
             margin-bottom: 0;
         }
     }
+    .tab-content {
+        .tab-pane {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
 }
 
 // DUO hero section start
 .duo-section {
     padding-bottom: 120px;
     padding-top: 60px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 88px;
+    }
 }
 .duo-content {
     text-align: center;
@@ -2226,6 +2241,18 @@
         font-size: 88px;
         line-height: 1.1;
         margin-bottom: 70px;
+        @include breakpoint(max-xl) {
+            font-size: 74px;
+        }
+        @include breakpoint(max-lg) {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+        @include breakpoint(max-sm) {
+            font-size: 40px;
+            max-width: 300px;
+            margin-inline: auto;
+        }
         span {
             color: var(--primary);
             display: block;
@@ -2239,12 +2266,19 @@
         color: var(--secondary-two);
         line-height: 1.4;
         margin-bottom: 80px;
+        @include breakpoint(max-lg) {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
     }
     .duo-button-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
+        @include breakpoint(max-lg) {
+            display: none;
+        }
     }
 }
 .duo-bg-shape {
@@ -2257,6 +2291,16 @@
     z-index: -3;
     img {
         width: 100%;
+    }
+    @include breakpoint(max-md) {
+        left: -150px;
+        right: 0;
+        top: 5%;
+        transform: translateX(0%);
+        overflow: hidden;
+        img {
+            width: 170%;
+        }
     }
 }
 // DUO hero section end
@@ -2271,13 +2315,26 @@
     justify-content: space-between;
     max-width: 890px;
     margin-inline: auto;
+    @include breakpoint(max-lg) {
+        justify-content: center;
+        margin-inline: auto;
+    }
 }
 .contact-content,
 .browse-content {
     max-width: 280px;
     text-align: center;
+    @include breakpoint(max-md) {
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
+        padding-block: 48px;
+        max-width: 307px;
+    }
     .title {
         margin-bottom: 28px;
+        @include breakpoint(max-lg) {
+            margin-bottom: 24px;
+        }
     }
     p {
         margin: 0;
@@ -2289,6 +2346,10 @@
 .browse-content {
     max-width: 350px;
     position: relative;
+    @include breakpoint(max-md) {
+        border: none;
+        padding-bottom: 0;
+    }
     &::before {
         position: absolute;
         content: "";
@@ -2298,6 +2359,9 @@
         height: 258px;
         width: 1px;
         background-color: #ededed;
+        @include breakpoint(max-lg) {
+            display: none;
+        }
     }
 }
 // contact us and browse profile content end
@@ -2305,6 +2369,29 @@
 // faq section start
 .faq-section {
     padding-bottom: 190px;
+    @media (min-width: 992px) {
+        .mobile-more-answer-btn {
+            display: none;
+        }
+    }
+    @include breakpoint(max-lg) {
+        padding-bottom: 88px;
+
+        .mobile-more-answer-btn {
+            margin-top: 26px;
+        }
+        .more-answer {
+            color: #2573c1;
+            font-weight: 500;
+            img {
+                margin-right: 5px;
+                transform: translateY(2px);
+            }
+        }
+        .hidden {
+            display: none !important;
+        }
+    }
     .faq-text {
         margin-bottom: 40px;
     }
@@ -2313,9 +2400,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 48px 35px;
+    @include breakpoint(max-lg) {
+        gap: 32px;
+    }
 }
 .faq-item {
     max-width: 541px;
+    @include breakpoint(max-xl) {
+        max-width: 444px;
+    }
     &__title {
         font-size: 18px;
         font-weight: 500;
@@ -2331,6 +2424,12 @@
 // transparency section start
 .transparency-section {
     padding-bottom: 140px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 88px;
+        .container {
+            padding-inline: 0;
+        }
+    }
 }
 .transparency-wrapper {
     border-radius: 18px;
@@ -2340,9 +2439,16 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    @include breakpoint(max-lg) {
+        border-radius: 0;
+        padding-inline: 16px;
+    }
 }
 .transparency-content {
     max-width: 480px;
+    @include breakpoint(max-xl) {
+        max-width: 400px;
+    }
     span {
         color: var(--primary-three);
         font-size: 13px;
@@ -2353,13 +2459,35 @@
         color: var(--white);
         margin-bottom: 32px;
     }
+    @include breakpoint(max-lg) {
+        .title {
+            margin-bottom: 0px;
+        }
+        .btn.primary {
+            display: none;
+        }
+    }
 }
 .transparency-content-right {
     text-align: right;
+    @media (min-width: 992px) {
+        .btn.primary {
+            display: none;
+        }
+    }
+    @include breakpoint(max-lg) {
+        text-align: start;
+        margin-top: 35px;
+    }
     .price {
         color: var(--white);
         font-size: 48px;
         margin-bottom: 16px;
+        @include breakpoint(max-lg) {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
     }
     p {
         margin: 0;
@@ -2367,6 +2495,10 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 1.8;
+        @include breakpoint(max-lg) {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
     }
 }
 // transparency section end
@@ -2375,6 +2507,9 @@
 .quick-call-wrapper {
     padding-top: 140px;
     padding-bottom: 130px;
+    @include breakpoint(max-lg) {
+        padding-block: 88px;
+    }
 }
 .quick-call-content {
     max-width: 540px;
@@ -2384,6 +2519,9 @@
         font-size: 600;
         font-size: 48px;
         margin-bottom: 32px;
+        @include breakpoint(max-lg) {
+            font-size: 32px;
+        }
     }
     p {
         font-size: 24px;
@@ -2392,6 +2530,11 @@
         line-height: 1.4;
         margin: 0;
         margin-bottom: 48px;
+        @include breakpoint(max-lg) {
+            font-size: 20px;
+            max-width: 288px;
+            margin-inline: auto;
+        }
     }
 }
 
@@ -2401,11 +2544,25 @@
     font-weight: 600;
     text-align: center;
     margin-bottom: 55px;
+    @include breakpoint(max-lg) {
+        font-size: 40px;
+    }
+}
+.how-section {
+    .container {
+        @include breakpoint(max-lg) {
+            padding-inline: 0;
+        }
+    }
 }
 .how-content-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    @include breakpoint(max-lg) {
+        justify-content: center;
+        gap: 88px;
+    }
 }
 .how-content-item {
     background-color: #f2f1f4;
@@ -2415,6 +2572,14 @@
     padding-inline: 62px;
     position: relative;
     z-index: 4;
+    @include breakpoint(max-xl) {
+        width: 48%;
+    }
+    @include breakpoint(max-lg) {
+        width: 100%;
+        border-radius: 0;
+        padding-inline: 23px;
+    }
     .shape-bg {
         position: absolute;
         top: 0;
@@ -2422,12 +2587,31 @@
         right: 0;
         bottom: 0;
         z-index: -1;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &:not(:first-child) {
+        @include breakpoint(max-lg) {
+            padding-bottom: 80px;
+        }
     }
     &:nth-child(2) {
         background: var(--white);
+        @include breakpoint(max-lg) {
+            background-color: #f2f1f4;
+        }
     }
     &:nth-child(4) {
         border-radius: 18px 18px 220px 18px;
+        @include breakpoint(max-xl) {
+            border-bottom-right-radius: 150px;
+        }
+        @include breakpoint(max-lg) {
+            border-radius: 0;
+            border-bottom-right-radius: 150px;
+        }
     }
     .serial-number {
         width: 64px;
@@ -2449,8 +2633,138 @@
         font-size: 18px;
         margin: 0;
         margin-bottom: 70px;
+        @include breakpoint(max-lg) {
+            margin-bottom: 35px;
+        }
+    }
+    .how-thumb {
+        @include breakpoint(max-xl) {
+            width: 100%;
+        }
     }
     img {
         margin-bottom: -6px;
     }
 }
+
+// developer section start
+.developer-section {
+    padding-bottom: 130px;
+    @include breakpoint(max-lg) {
+        padding-bottom: 80px;
+        // background-color: #e6e6eb;
+        .container {
+            padding-inline: 0;
+        }
+    }
+}
+.developer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include breakpoint(max-lg) {
+        gap: 80px;
+    }
+    .developer-left-content {
+        width: calc(100% - 460px);
+        padding-right: 24px;
+        @include breakpoint(max-xl) {
+            width: calc(100% - 450px);
+        }
+        @include breakpoint(max-lg) {
+            width: 100%;
+            padding-right: 0px;
+        }
+        // position: relative;
+        .content {
+            border-radius: 18px;
+            background-color: #f2f1f4;
+            position: relative;
+            z-index: 3;
+            @include breakpoint(max-lg) {
+                border-radius: 0px;
+                display: flex;
+                flex-direction: column-reverse;
+                .top-content {
+                    margin-top: 14px;
+                }
+            }
+            .shape-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 24px;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 18px;
+                z-index: -1;
+            }
+            .developer-title {
+                margin-bottom: 16px;
+            }
+            p {
+                margin-bottom: 70px;
+                font-size: 18px;
+                line-height: 1.7;
+                @include breakpoint(max-lg) {
+                    margin-bottom: 0;
+                    font-size: 16px;
+                }
+            }
+            .thumb {
+                text-align: center;
+                @include breakpoint(max-xl) {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            padding: 64px;
+            @include breakpoint(max-lg) {
+                padding: 40px;
+            }
+        }
+    }
+    .developer-right-content {
+        width: 460px;
+        @include breakpoint(max-xl) {
+            width: 450px;
+            overflow-x: hidden;
+        }
+        @include breakpoint(max-lg) {
+            width: 100%;
+            border-radius: 0;
+            border-top-right-radius: 140px;
+            padding-left: 20px;
+        }
+        background-color: #f2f1f4;
+        border-radius: 28px 220px 18px 18px;
+        padding: 44px;
+        padding-right: 56px;
+        padding-top: 215px;
+        @include breakpoint(max-lg) {
+            padding-top: 96px;
+        }
+        .thumb {
+            text-align: end;
+            margin-bottom: 48px;
+            @include breakpoint(max-lg) {
+                margin-bottom: 20px;
+            }
+        }
+        .developer-title {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+        p {
+            font-size: 18px;
+            padding-left: 20px;
+        }
+        .hand-icon {
+            padding-left: 20px;
+        }
+    }
+}
+// developer section end

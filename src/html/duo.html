@@ -73,7 +73,35 @@
     <!-- developer section start -->
     <section class="developer-section">
         <div class="container">
-
+            <div class="developer-wrapper">
+                <div class="developer-left-content">
+                    <div class="content">
+                        <div class="top-content">
+                            <h3 class="developer-title">Two for the price of one</h3>
+                            <p>Recruit a competitive junior, supervised daily by a senior. Save time and quality for
+                                you,
+                                increase
+                                his or her skills. A win-win situation.</p>
+                        </div>
+                        <div class="thumb">
+                            <img src="assets/images/thumb/developer-thumb1.png" alt="thumb">
+                        </div>
+                        <img class="shape-bg" src="assets/images/thumb/developer-shape.png" alt="developer shape">
+                    </div>
+                </div>
+                <div class="developer-right-content">
+                    <div class="content">
+                        <div class="thumb">
+                            <img src="assets/images/thumb/developer-thumb2.png" alt="thumb">
+                        </div>
+                        <h3 class="developer-title">Skimmed by their peers.</h3>
+                        <p>We select the most interesting junior profiles based on their experience. They have all
+                            already
+                            passed an interview and tests with flying colours.</p>
+                        <img class="hand-icon" src="assets/images/icons/hand-icon.png" alt="hand icon">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- developer section end  -->
@@ -88,13 +116,13 @@
                     <h3 class="title">Choose the junior who will join your team</h3>
                     <p>They will join your team, working from home or on site, according to your conditions and criteria
                     </p>
-                    <img src="assets/images/thumb/how1.png" alt="how img">
+                    <img class="how-thumb" src="assets/images/thumb/how1.png" alt="how img">
                 </div>
                 <div class="how-content-item">
                     <div class="serial-number">2</div>
                     <h3 class="title">The most suitable referent is chosen</h3>
                     <p>We determine your needs together and select the best referent</p>
-                    <img src="assets/images/thumb/how2.png" alt="how img">
+                    <img class="how-thumb" src="assets/images/thumb/how2.png" alt="how img">
                     <div class="shape-bg">
                         <img src="assets/images/thumb/how-shape.png" alt="how shape">
                     </div>
@@ -103,7 +131,7 @@
                     <div class="serial-number">3</div>
                     <h3 class="title">5 hours of supervision per week</h3>
                     <p>Five hours during which the mentor will challenge, help and encourage your recruit</p>
-                    <img src="assets/images/thumb/how3.png" alt="how img">
+                    <img class="how-thumb" src="assets/images/thumb/how3.png" alt="how img">
                     <div class="shape-bg">
                         <img src="assets/images/thumb/how-shape2.png" alt="how shape">
                     </div>
@@ -112,7 +140,7 @@
                     <div class="serial-number">4</div>
                     <h3 class="title">Mission completed. Keep the Junior.</h3>
                     <p>GetAwed and Freelance send each month their invoices separately. Cancel GetAwed anytime.</p>
-                    <img src="assets/images/thumb/how4.png" alt="how img">
+                    <img class="how-thumb" src="assets/images/thumb/how4.png" alt="how img">
                 </div>
             </div>
         </div>
@@ -148,6 +176,9 @@
                     <h2 class="price">400€/jr</h2>
                     <p>110€ for the referent <br>
                         250€ for the junior. 40€ for GetAwed.</p>
+                    <a href="" class="btn primary">
+                        Make an
+                        appointment</a>
                 </div>
             </div>
         </div>
@@ -201,6 +232,10 @@
                         si vous le souhaitez.</p>
                 </div>
             </div>
+            <div class="mobile-more-answer-btn">
+                <a href="" class="more-answer"><img src="assets/images/icons/arrow-right.svg" alt="arrow right"> More
+                    answers</a>
+            </div>
         </div>
     </section>
     <!-- faq section end -->
@@ -230,6 +265,32 @@
 
     @@include('../partial/_footer.html')
     @@include('../partial/_template-bottom.html')
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll('.faq-wrapper .faq-item');
+            const moreAnswerBtn = document.querySelector('.mobile-more-answer-btn .more-answer');
+
+            const toggleMoreAnswers = () => {
+                for (let i = 4; i < faqItems.length; i++) {
+                    faqItems[i].classList.toggle('hidden');
+                }
+                // Toggle the visibility of the "More answers" button based on the visibility of all FAQ items
+                const areAllItemsVisible = !faqItems[4].classList.contains('hidden');
+                moreAnswerBtn.style.display = areAllItemsVisible ? 'none' : 'block';
+            };
+
+            moreAnswerBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                toggleMoreAnswers();
+            });
+
+            // Initially hide extra FAQ items
+            toggleMoreAnswers();
+        });
+
+
+    </script>
 
 </body>
 

@@ -415,7 +415,8 @@
                                                 <div id="keywordsContainer2">
                                                     <!-- Keywords will be dynamically added here -->
                                                 </div>
-                                                <input type="text" id="txtInput2" />
+                                                <textarea id="txtInput2"></textarea>
+
                                             </div>
                                         </div>
                                     </div>
@@ -587,7 +588,37 @@
             });
         });
 
+    </script>
 
+    <script>
+        $(document).ready(function () {
+            // Remove picture-upload-item when delete-icon is clicked
+            $('.picture-upload-wrapper').on('click', '.delete-icon', function () {
+                $(this).closest('.picture-upload-item').remove();
+            });
+
+            // Add picture-upload-item when upload-add-new-img changes
+            $('.upload-add-new-img').change(function () {
+                // Check if any file is selected
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Create new picture-upload-item
+                        var newItem = $('<div class="picture-upload-item">' +
+                            '<img src="' + e.target.result + '" alt="upload img">' +
+                            '<span class="delete-icon"><img src="assets/images/icons/delete.svg" alt="upload icon"></span>' +
+                            '</div>');
+                        // Append the new item to picture-upload-wrapper
+                        $('.picture-upload-wrapper').prepend(newItem);
+                    }
+                    // Read the uploaded file as data URL
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+    </script>
+
+    <script>
         $(document).ready(function () {
             $('#account .nav-link').click(function () {
                 // Remove active class from all tab links
@@ -604,7 +635,6 @@
         });
 
     </script>
-
 </body>
 
 </html>
